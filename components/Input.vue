@@ -20,8 +20,11 @@
 
 //Conteneur principal
 .input-container{
+    display: flex;
+    flex-direction: column;
     text-align: left;
     width: 100%;
+    gap: 0.75rem;
 }
 
 //Champ de saisie
