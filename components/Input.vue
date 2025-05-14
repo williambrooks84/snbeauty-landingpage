@@ -18,7 +18,7 @@
 
 <style scoped lang="scss">
 .input-container{
-    text-align: left;
+    text-align: center;
     width: 100%;
 }
 

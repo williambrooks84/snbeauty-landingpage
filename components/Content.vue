@@ -30,6 +30,7 @@
 .label{
     font-size: 1.5rem;
     text-align: left;
+    margin: 0 auto;
     color: $text-color-light;
 }
 </style>
