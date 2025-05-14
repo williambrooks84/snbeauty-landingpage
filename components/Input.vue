@@ -5,7 +5,7 @@
             <input type="email" class="input" placeholder="nom@exemple.com" />
             <button class="btn">Je m'inscris</button>
         </div>
-        <p>
+        <p class="text">
         Vous pouvez lire notre
         <a href="/politique-de-confidentialite" target="_blank" rel="noopener">Politique de Confidentialité</a>
         </p>
@@ -17,11 +17,14 @@
 </script>
 
 <style scoped lang="scss">
+
+//Conteneur principal
 .input-container{
     text-align: left;
     width: 100%;
 }
 
+//Champ de saisie
 .input{
     height: 3rem;
     box-sizing: border-box;
@@ -29,6 +32,7 @@
     font-size: 1rem;
     font-weight: 400;
     color: $gray;
+    background: $white;
     border: 1px solid $gray;
     border-top-left-radius: 0.375rem;
     border-bottom-left-radius: 0.375rem;
@@ -36,16 +40,29 @@
     border-bottom-right-radius: 0;
 }
 
+//Bouton
 .btn{
     height: 3rem;
     box-sizing: border-box;
     padding: 0 1.5rem;
-    color: $text-color-dark;
-    background: $primary-light;
+    color: var(--button-text);
+    background: var(--primary-color);
     border: none;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
 }
 
+//Texte
+.text {
+    color: $text-color-light;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    //Lien
+    a {
+        color: $text-color-light;
+        text-decoration: underline;
+    }
+}
 </style>

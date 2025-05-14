@@ -1,7 +1,35 @@
-body {
-  font-family: 'Montserrat', sans-serif;
+//Variables thème clair
+:root {
+  --primary-color: #{$primary-light};
+  --text-color: #{$text-color-light};
+  --button-text: #{$text-color-dark};
 }
 
+//Variables thème sombre
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #{$primary-dark};
+    --text-color: #{$text-color-dark};
+    --button-text: #{$text-color-light};
+  }
+}
+
+//Body clair
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: $background-light;
+  color: $text-color-light;
+}
+
+//Body sombre
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $background-dark;
+    color: $text-color-dark;
+  }
+}
+
+//Reset des styles
 button{
   background: none;
   box-shadow: none;
@@ -10,6 +38,7 @@ button{
 
 a{
   text-decoration: none;
+  color: inherit;
 }
 
 input{

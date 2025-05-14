@@ -12,6 +12,8 @@
 </script>
 
 <style scoped lang="scss">
+
+//Conteneur principal
 .container-content{
     display: flex;
     flex-direction: column;
@@ -19,17 +21,18 @@
     width: 100%;
 }
 
+//Titre
 .title{
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    color: $primary-light;
+    color: var(--primary-color);
 }
 
+//Etiquette
 .label{
     font-size: 1.5rem;
     text-align: left;
-    color: $text-color-light;
 }
 </style>

@@ -1,11 +1,15 @@
-$background-light: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #FFF 70.19%, #FDFAF0 100%);
-$background-dark: radial-gradient(57.36% 57.36% at 50% 42.64%, #2D2D2C 0%, #30302A 49.52%, #171717 100%);
+//Arrière-plan
+$background-light: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #FFFFFF 70%, #FDFAF0 100%);
+$background-dark: radial-gradient(57% 57% at 50% 43%, #2D2D2C 0%, #30302A 50%, #171717 100%);
 
+//Couleurs primaires
 $primary-light: #B11025;
 $primary-dark: #EACD53;
 
+//Texte
 $text-color-light: #191918;
 $text-color-dark: #FBFAF3;
 
+//Couleurs neutres
 $white: #FFFFFF;
 $gray: #9C9C9C;

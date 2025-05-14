@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <Logo />
         <Counter />
         <Content />
         <Input />
@@ -7,6 +8,7 @@
 </template>
 
 <script setup>
+import Logo from '~/components/Logo.vue';
 import Counter from '~/components/Counter.vue';
 import Content from '~/components/Content.vue';
 import Input from '~/components/Input.vue';
@@ -22,6 +24,6 @@ import Input from '~/components/Input.vue';
     min-height: 100vh;
     width: fit-content;
     margin: 0 auto;
-    background-color: $background-light;
+    background-color: var(--background-color);
 }
 </style>
