@@ -1,18 +1,20 @@
 <template>
     <div class="container">
+        <Menu/>
         <Logo />
         <Counter />
         <Content />
-        <Input />
+        <InputContainer />
         <ButtonGroup />
     </div>
 </template>
 
 <script setup>
+import Menu from '../components/Apropos.vue';
 import Logo from '~/components/Logo.vue';
 import Counter from '~/components/Counter.vue';
 import Content from '~/components/Content.vue';
-import Input from '~/components/Input.vue';
+import InputContainer from '~/components/InputContainer.vue';
 import ButtonGroup from '~/components/ButtonGroup.vue';
 </script>
 

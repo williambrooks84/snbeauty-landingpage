@@ -1,15 +1,8 @@
 <template>
-    <div class="input-container">
-        <p class="label">E-mail :</p>
-        <div>
-            <input type="email" class="input" placeholder="nom@exemple.com" />
-            <button class="btn">Je m'inscris</button>
-        </div>
-        <p class="text">
-        Vous pouvez lire notre
-        <a href="/politique-de-confidentialite" target="_blank" rel="noopener">Politique de Confidentialité</a>
-        </p>
-    </div>    
+    <form>
+        <input type="email" class="input" placeholder="nom@exemple.com" />
+        <button class="btn">Je m'inscris</button>
+    </form>
 </template>
 
 <script setup>
@@ -17,18 +10,8 @@
 </script>
 
 <style scoped lang="scss">
-
-//Conteneur principal
-.input-container{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    gap: 0.75rem;
-}
-
 //Champ de saisie
-.input{
+.input {
     height: 3rem;
     box-sizing: border-box;
     padding: 0.75rem 10rem 0.75rem 1rem;
@@ -44,7 +27,7 @@
 }
 
 //Bouton
-.btn{
+.btn {
     height: 3rem;
     box-sizing: border-box;
     padding: 0 1.5rem;
@@ -54,18 +37,5 @@
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-}
-
-//Texte
-.text {
-    color: var(--text-color);
-    font-size: 0.875rem;
-    font-weight: 500;
-
-    //Lien
-    a {
-        color: var(--text-color);
-        text-decoration: underline;
-    }
 }
 </style>

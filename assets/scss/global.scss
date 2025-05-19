@@ -1,88 +1,119 @@
-//Variables thème clair
+// =============================================
+// Theme Variables
+// =============================================
+
 :root {
+  // Light theme defaults
   --primary-color: #{$primary-light};
   --text-color: #{$text-color-light};
   --button-text: #{$text-color-dark};
+  --background: #{$background-light};
 }
 
-//Variables thème sombre
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #{$primary-dark};
-    --text-color: #{$text-color-dark};
-    --button-text: #{$text-color-light};
-  }
+.dark {
+  // Dark theme overrides
+  --primary-color: #{$primary-dark};
+  --text-color: #{$text-color-dark};
+  --button-text: #{$text-color-light};
+  --background: #{$background-dark};
 }
 
-//Body clair
+// =============================================
+// Base Elements
+// =============================================
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background: $background-light;
-  color: $text-color-light;
-
-  //Pseudo élément pour affichage de "bientôt"
+  background: var(--background);
+  color: var(--text-color);
+  position: relative; // For pseudo-element positioning
+  
+  // Background decoration elements
+  &::before,
   &::after {
     content: "";
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  // "Bientôt" decoration
+  &::after {
     background: url("/assets/img/bientot.svg") no-repeat center bottom;
     background-size: contain;
-    position: fixed;
     left: 0;
     bottom: -10px;
     width: 100%;
     height: 150px;
-    pointer-events: none;
-    z-index: -1;
   }
 
+  // Products decoration
   &::before {
-    content: "";
     background: url("/assets/img/produits.png") no-repeat left bottom;
-    background-size: auto 300px; // Height is 300px, width auto
-    position: fixed;
+    background-size: auto 300px;
     left: 0;
     bottom: 0;
-    width: 400px; // Set width to match image or desired size
+    width: 400px;
     height: 400px;
-    z-index: -1;
-    pointer-events: none;
   }
 }
 
-//Body sombre
-@media (prefers-color-scheme: dark) {
-  body {
-    background: $background-dark;
-    color: $text-color-dark;
-  }
+// =============================================
+// Typography Reset
+// =============================================
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: inherit;
 }
 
-//Reset des styles
+// =============================================
+// Interactive Elements Reset
+// =============================================
+
 button {
+  appearance: none;
   background: none;
-  box-shadow: none;
   border: none;
+  box-shadow: none;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-input {
+input,
+textarea,
+select {
+  appearance: none;
   background: none;
-  box-shadow: none;
   border: none;
+  box-shadow: none;
   outline: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+  font: inherit;
+  color: inherit;
   padding: 0;
   margin: 0;
+  
+  &::placeholder {
+    color: inherit;
+    opacity: 0.6;
+  }
 }

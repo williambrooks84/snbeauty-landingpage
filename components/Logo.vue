@@ -5,11 +5,8 @@
 </template>
 
 <script setup>
-
 import { ref, computed, onMounted } from 'vue'
 
-
-//Changer le logo selon le thème choisi
 const theme = ref('light')
 
 const logoSrc = computed(() =>
@@ -18,23 +15,22 @@ const logoSrc = computed(() =>
         : '/assets/img/logo-light.svg'
 )
 
-function updateTheme(e) {
-    theme.value = e.matches ? 'dark' : 'light'
+function updateTheme() {
+    const htmlClass = document.documentElement.classList
+    theme.value = htmlClass.contains('dark') ? 'dark' : 'light'
 }
 
 onMounted(() => {
-    const media = window.matchMedia('(prefers-color-scheme: dark)')
-    theme.value = media.matches ? 'dark' : 'light'
-    media.addEventListener('change', updateTheme)
+    updateTheme()
+    // Listen for class changes on <html>
+    const observer = new MutationObserver(updateTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 })
-
 </script>
 
 <style scoped lang="scss">
-
 .logo{
     width: 264px;
     height: auto;
 }
-
 </style>
