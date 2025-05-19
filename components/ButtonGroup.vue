@@ -97,10 +97,9 @@ img {
     }
 
     .mentions-content {
-        max-width: 600px;
-        margin: 10vh auto;
+        max-width: 75%;
+        margin: auto;
         padding: 2rem;
-        text-align: center;
     }
 }
 </style>
