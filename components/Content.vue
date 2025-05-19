@@ -20,11 +20,12 @@
     justify-content: center;
     width: 100%;
     gap: 1rem;
+    margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 //Titre
 .title{
-    font-size: 2.5rem;
+    font-size: clamp(1.35rem, 5vw, 2.75rem);
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
@@ -33,7 +34,8 @@
 
 //Etiquette
 .label{
-    font-size: 1.5rem;
-    text-align: left;
+    font-size: 1rem;
+    text-align: center;
 }
+
 </style>

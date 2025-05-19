@@ -33,7 +33,7 @@ onMounted(() => {
 <style scoped lang="scss">
 
 .logo{
-    width: 264px;
+    width: clamp(150px, 20vw, 200px);
     height: auto;
 }
 
