@@ -58,13 +58,13 @@
 
 //Texte
 .text {
-    color: $text-color-light;
+    color: var(--text-color);
     font-size: 0.875rem;
     font-weight: 500;
 
     //Lien
     a {
-        color: $text-color-light;
+        color: var(--text-color);
         text-decoration: underline;
     }
 }
