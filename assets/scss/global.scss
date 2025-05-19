@@ -1,0 +1,88 @@
+//Variables thème clair
+:root {
+  --primary-color: #{$primary-light};
+  --text-color: #{$text-color-light};
+  --button-text: #{$text-color-dark};
+}
+
+//Variables thème sombre
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #{$primary-dark};
+    --text-color: #{$text-color-dark};
+    --button-text: #{$text-color-light};
+  }
+}
+
+//Body clair
+body {
+  font-family: "Montserrat", sans-serif;
+  background: $background-light;
+  color: $text-color-light;
+
+  //Pseudo élément pour affichage de "bientôt"
+  &::after {
+    content: "";
+    background: url("/assets/img/bientot.svg") no-repeat center bottom;
+    background-size: contain;
+    position: fixed;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 150px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &::before {
+    content: "";
+    background: url("/assets/img/produits.png") no-repeat left bottom;
+    background-size: auto 300px; // Height is 300px, width auto
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 400px; // Set width to match image or desired size
+    height: 400px;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+//Body sombre
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $background-dark;
+    color: $text-color-dark;
+  }
+}
+
+//Reset des styles
+button {
+  background: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  background: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
