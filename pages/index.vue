@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+import Menu from '../components/Apropos.vue';
 import Logo from '~/components/Logo.vue';
 import Counter from '~/components/Counter.vue';
 import Content from '~/components/Content.vue';

@@ -1,91 +1,121 @@
-// Variables thème clair
-html.light, :root {
+// =============================================
+// Theme Variables
+// =============================================
+
+:root {
+  // Light theme defaults
   --primary-color: #{$primary-light};
   --text-color: #{$text-color-light};
   --button-text: #{$text-color-dark};
+  --background: #{$background-light};
 }
 
-// Variables thème sombre
-html.dark {
+.dark {
+  // Dark theme overrides
   --primary-color: #{$primary-dark};
   --text-color: #{$text-color-dark};
   --button-text: #{$text-color-light};
+  --background: #{$background-dark};
 }
 
-// Variables thème sombre auto (si pas de classe mais préférence système)
-@media (prefers-color-scheme: dark) {
-  :root:not(.light):not(.dark) {
-    --primary-color: #{$primary-dark};
-    --text-color: #{$text-color-dark};
-    --button-text: #{$text-color-light};
-  }
-}
+// =============================================
+// Base Elements
+// =============================================
 
-*, *::before, *::after {
-  box-sizing: border-box;
+html, body {
   margin: 0;
   padding: 0;
+  overflow: auto; /* Changed from hidden to auto */
+  height: 100%;
+  width: 100%;
 }
 
-//Body clair
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: $background-light;
-  color: $text-color-light;
-
+  font-family: "Montserrat", sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  position: relative;
+  min-height: 100%; /* Ensure body takes at least viewport height */
+  
+  // Background decoration elements
+  &::before,
   &::after {
     content: "";
-    background: url('./assets/img/bientot.svg') no-repeat center bottom;
-    background-size: contain;
-    position: fixed;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 150px; 
+    position: fixed; /* These will stay fixed during scrolling */
     pointer-events: none;
     z-index: -1;
   }
 
+  // "Bientôt" decoration
+  &::after {
+    background: url("/assets/img/bientot.svg") no-repeat center bottom;
+    background-size: contain;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 150px;
+  }
+
+  // Products decoration
   &::before {
-    content: "";
-    background: url('/assets/img/produits.png') no-repeat left bottom;
+    background: url("/assets/img/produits.png") no-repeat left bottom;
     background-size: auto 300px;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 400px;
     height: 400px;
-    z-index: -1;
-    pointer-events: none;
   }
 }
 
-//Body sombre
-html.dark body {
-  background: $background-dark;
-  color: $text-color-dark;
+// =============================================
+// Typography Reset
+// =============================================
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: inherit;
 }
 
-//Reset des styles
-button{
+// =============================================
+// Interactive Elements Reset
+// =============================================
+
+button {
+  appearance: none;
   background: none;
+  border: none;
   box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
-}
-
-input{
+input,
+textarea,
+select {
+  appearance: none;
   background: none;
-  box-shadow: none;
   border: none;
+  box-shadow: none;
   outline: none;
-}
-
-h1, h2, h3, h4, h5, h6, p{
+  font: inherit;
+  color: inherit;
   padding: 0;
   margin: 0;
+  
+  &::placeholder {
+    color: inherit;
+    opacity: 0.6;
+  }
 }

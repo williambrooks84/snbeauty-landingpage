@@ -95,7 +95,7 @@ async function handleSubmit() {
 }
 
 //Champ de saisie
-.input{
+.input {
     height: 3rem;
     box-sizing: border-box;
     padding: 0.75rem 10rem 0.75rem 1rem;
@@ -120,7 +120,7 @@ async function handleSubmit() {
 }
 
 //Bouton
-.btn{
+.btn {
     height: 3rem;
     box-sizing: border-box;
     padding: 0 1.5rem;
