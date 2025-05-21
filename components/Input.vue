@@ -1,34 +1,31 @@
 <template>
-    <div class="input-container">
-        <p class="label">E-mail :</p>
-        <div>
-            <input type="email" class="input" placeholder="nom@exemple.com" />
-            <button class="btn">Je m'inscris</button>
-        </div>
-        <p class="text">
-        Vous pouvez lire notre
-        <a href="/politique-de-confidentialite" target="_blank" rel="noopener">Politique de Confidentialité</a>
-        </p>
-    </div>    
+    <form @submit.prevent="handleSubmit" >
+        <input type="email" class="input" placeholder="nom@exemple.com" />
+        <button class="btn" type="submit">Je m'inscris</button>
+    </form>
 </template>
 
 <script setup>
 
+import confetti from 'canvas-confetti';
+
+const email = ref('');
+
+const handleSubmit = () => {
+    // Your form submission logic here
+        console.log('Form submitted with email:', email.value);
+    // Fire confetti
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}   
 </script>
 
 <style scoped lang="scss">
-
-//Conteneur principal
-.input-container{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    gap: 0.75rem;
-}
-
 //Champ de saisie
-.input{
+.input {
     height: 3rem;
     box-sizing: border-box;
     padding: 0.75rem 10rem 0.75rem 1rem;
@@ -44,7 +41,7 @@
 }
 
 //Bouton
-.btn{
+.btn {
     height: 3rem;
     box-sizing: border-box;
     padding: 0 1.5rem;
@@ -54,18 +51,5 @@
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-}
-
-//Texte
-.text {
-    color: var(--text-color);
-    font-size: 0.875rem;
-    font-weight: 500;
-
-    //Lien
-    a {
-        color: var(--text-color);
-        text-decoration: underline;
-    }
 }
 </style>
