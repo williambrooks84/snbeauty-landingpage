@@ -58,8 +58,10 @@ onUnmounted(() => {
 .countdown {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 768px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 //Item du compteur
@@ -67,21 +69,30 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  padding: 20px;
 }
 
 //Nombres
 .countdown-time {
-  font-size: 5.125rem;
+  font-size: clamp(1rem, 5vw, 4rem);
   font-weight: 600;
 }
 
 //Etiquettes
 .countdown-label {
-  font-size: 1.25rem;
+  font-size: clamp(.65rem, 2vw, 25px);
   font-weight: 300;
   color: var(--text-color);
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 767.98px) {
+  .countdown {
+    margin-top: 2rem;
+  }
+  .countdown-item {
+    width: 80px;
+  }
 }
 
 </style>

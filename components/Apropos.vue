@@ -60,8 +60,6 @@
                         Le lancement approche. Envie d’en savoir plus ?
                     </p>
 
-                    <Input />
-
                     <p class="info">Rejoignez la liste pour recevoir les infos en avant-première</p>
                 </section>
             </div>
@@ -71,7 +69,6 @@
 
 <script setup>
 import { ref } from "vue";
-import Input from "~/components/Input.vue";
 
 const isOpen = ref(false);
 const toggleOverlay = () => {

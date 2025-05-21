@@ -59,54 +59,50 @@
 </script>
 
 <style scoped lang="scss">
-.privacy-policy-container {
-  height: 100vh;
-  overflow-y: auto; 
-}
 
-.privacy-policy {
-  padding: 1.5rem;
-  padding-bottom: 3rem; // Extra space at bottom
+// .privacy-policy {
+//   padding: 1.5rem;
+//   padding-bottom: 3rem; // Extra space at bottom
 
-  .privacy-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    text-align: center;
-  }
+//   .privacy-title {
+//     font-size: 2rem;
+//     margin-bottom: 0.5rem;
+//     color: var(--text-color);
+//     text-align: center;
+//   }
 
-  .privacy-update {
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    text-align: center;
-  }
+//   .privacy-update {
+//     font-size: 0.875rem;
+//     margin-bottom: 1.5rem;
+//     color: var(--text-color);
+//     text-align: center;
+//   }
 
-  .privacy-text {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    color: var(--text-color);
+//   .privacy-text {
+//     margin-bottom: 1rem;
+//     line-height: 1.6;
+//     color: var(--text-color);
 
-    strong {
-      font-weight: bold;
-      color: var(--text-color);
-    }
-  }
+//     strong {
+//       font-weight: bold;
+//       color: var(--text-color);
+//     }
+//   }
 
-  .privacy-subtitle {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-color);
-  }
+//   .privacy-subtitle {
+//     font-size: 1.5rem;
+//     margin-top: 1.5rem;
+//     margin-bottom: 0.75rem;
+//     color: var(--text-color);
+//   }
 
-  a {
-    color: var(--text-color);
-    text-decoration: none;
+//   a {
+//     color: var(--text-color);
+//     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// }
 </style>

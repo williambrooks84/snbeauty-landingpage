@@ -1,7 +1,12 @@
 <template>
-    <form @submit.prevent="handleSubmit" >
+    <form @submit.prevent="handleSubmit" id="form">
+        <label for="email" class="label">Email :</label>
         <input type="email" class="input" placeholder="nom@exemple.com" />
         <button class="btn" type="submit">Je m'inscris</button>
+        <small class="text">
+                Vous pouvez lire notre
+                <a href="/politique-de-confidentialite" target="_blank" rel="noopener">Politique de Confidentialité</a>
+        </small>
     </form>
 </template>
 
@@ -24,20 +29,27 @@ const handleSubmit = () => {
 </script>
 
 <style scoped lang="scss">
+//Etiquette
+.label{
+    font-size: clamp(1rem, 2vw, 20px);
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 8px !important;
+    display: block;
+}
+
 //Champ de saisie
 .input {
     height: 3rem;
     box-sizing: border-box;
-    padding: 0.75rem 10rem 0.75rem 1rem;
+    padding: 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     color: $gray;
     background: $white;
     border: 1px solid $gray;
-    border-top-left-radius: 0.375rem;
-    border-bottom-left-radius: 0.375rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 0.5rem;
+    width: 100%;
 }
 
 //Bouton
@@ -51,5 +63,41 @@ const handleSubmit = () => {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 8px;
+    border-radius: 0.5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .input {
+        max-width: 500px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .btn {
+        display: inline-flex;
+        width: auto;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        position: relative;
+        transform: translateX(-4px);
+        border: var(--primary-color) 1px solid;
+    }
+    #form {
+        display: block;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+}
+
+small {
+    padding-top: 12px;
+    font-size: 0.75rem;
+    a {
+        text-decoration: underline;
+    }
 }
 </style>
