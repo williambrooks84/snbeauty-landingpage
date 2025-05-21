@@ -25,21 +25,23 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto; /* Changed from hidden to auto */
   height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   background: var(--background);
   color: var(--text-color);
-  position: relative; // For pseudo-element positioning
+  position: relative;
+  min-height: 100%; /* Ensure body takes at least viewport height */
   
   // Background decoration elements
   &::before,
   &::after {
     content: "";
-    position: fixed;
+    position: fixed; /* These will stay fixed during scrolling */
     pointer-events: none;
     z-index: -1;
   }

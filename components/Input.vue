@@ -1,12 +1,26 @@
 <template>
-    <form>
+    <form @submit.prevent="handleSubmit" >
         <input type="email" class="input" placeholder="nom@exemple.com" />
-        <button class="btn">Je m'inscris</button>
+        <button class="btn" type="submit">Je m'inscris</button>
     </form>
 </template>
 
 <script setup>
 
+import confetti from 'canvas-confetti';
+
+const email = ref('');
+
+const handleSubmit = () => {
+    // Your form submission logic here
+        console.log('Form submitted with email:', email.value);
+    // Fire confetti
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}   
 </script>
 
 <style scoped lang="scss">
