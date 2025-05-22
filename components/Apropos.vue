@@ -1,6 +1,6 @@
 <template>
     <div>
-            <button class="menu-button" @click="toggleOverlay">
+            <button tabindex="0" class="menu-button" @click="toggleOverlay" type="button">
       <svg
       v-if="!isOpen"
       width="48"

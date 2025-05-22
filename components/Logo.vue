@@ -33,6 +33,7 @@ onMounted(() => {
     width: clamp(9rem, 20vw, 180px);
     height: auto;
     display: block;
-    margin: 55px auto 28px auto;
+    margin: 0 auto 28px auto;
+    padding-top: 55px;
 }
 </style>

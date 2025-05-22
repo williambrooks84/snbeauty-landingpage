@@ -7,7 +7,7 @@
 
       <h2 class="privacy-subtitle">1. Responsable du traitement</h2>
       <p>Le site <strong>snbeautycosmetics.com</strong> est édité par SN Beauty Cosmetics.</p>
-      <p>Contact : contact@snbeautycosmetics.com</p>
+      <p>Contact : <a href="mailto:webmaster@snbeautycosmetics.com">webmaster@snbeautycosmetics.com</a></p>
 
       <h2 class="privacy-subtitle">2. Données collectées</h2>
       <p class="privacy-text">
@@ -43,7 +43,7 @@
       <p class="privacy-text">
         Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez exercer vos droits
         d’accès, de rectification, d’opposition, de suppression et de portabilité en nous écrivant à
-        <a href="mailto:contact@snbeautycosmetics.com">contact@snbeautycosmetics.com</a>.
+        <a href="mailto:webmaster@snbeautycosmetics.com">webmaster@snbeautycosmetics.com</a>.
       </p>
 
       <h2 class="privacy-subtitle">8. Cookies</h2>
@@ -59,50 +59,54 @@
 </script>
 
 <style scoped lang="scss">
+.privacy-policy-container {
+  max-width: 1000px;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+ .privacy-policy {
+   padding: 1.5rem;
+   padding-bottom: 3rem; // Extra space at bottom
 
-// .privacy-policy {
-//   padding: 1.5rem;
-//   padding-bottom: 3rem; // Extra space at bottom
+   .privacy-title {
+     font-size: 2rem;
+     margin-bottom: 0.5rem;
+     color: var(--text-color);
+     text-align: center;
+   }
 
-//   .privacy-title {
-//     font-size: 2rem;
-//     margin-bottom: 0.5rem;
-//     color: var(--text-color);
-//     text-align: center;
-//   }
+  .privacy-update {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+  }
 
-//   .privacy-update {
-//     font-size: 0.875rem;
-//     margin-bottom: 1.5rem;
-//     color: var(--text-color);
-//     text-align: center;
-//   }
+  .privacy-text {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
 
-//   .privacy-text {
-//     margin-bottom: 1rem;
-//     line-height: 1.6;
-//     color: var(--text-color);
+    strong {
+      font-weight: bold;
+      color: var(--text-color);
+    }
+  }
 
-//     strong {
-//       font-weight: bold;
-//       color: var(--text-color);
-//     }
-//   }
+  .privacy-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+  }
 
-//   .privacy-subtitle {
-//     font-size: 1.5rem;
-//     margin-top: 1.5rem;
-//     margin-bottom: 0.75rem;
-//     color: var(--text-color);
-//   }
+  a {
+    color: var(--text-color);
+    text-decoration: none;
 
-//   a {
-//     color: var(--text-color);
-//     text-decoration: none;
-
-//     &:hover {
-//       text-decoration: underline;
-//     }
-//   }
-// }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 </style>

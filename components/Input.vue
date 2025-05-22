@@ -100,4 +100,24 @@ small {
         text-decoration: underline;
     }
 }
+
+.dark {
+    .input {
+        border: 1px solid #ccc;
+        &:focus {
+            border: 1px solid var(--primary-color);
+            box-shadow: 0px 0px 4px 0px var(--primary-color)
+        }
+    }
+}
+
+.light {
+    .input {
+        border: 1px solid #ccc;
+        &:focus {
+            border: 1px solid var(--primary-color);
+            box-shadow: 0px 0px 3px 1px rgba(#B11025, 0.25)
+        }
+    }
+}
 </style>
