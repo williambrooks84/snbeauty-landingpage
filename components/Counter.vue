@@ -2,19 +2,27 @@
   <div class="countdown">
     <div class="countdown-item">
       <span class="countdown-time">{{ days }}</span>
-      <span class="countdown-label">jours</span>
+      <span class="countdown-label">
+        {{ days <= 1 ? 'jour' : 'jours' }}
+      </span>
     </div>
     <div class="countdown-item">
       <span class="countdown-time">{{ hours }}</span>
-      <span class="countdown-label">heures</span>
+      <span class="countdown-label">
+        {{ hours <= 1 ? 'heure' : 'heures' }}
+      </span>
     </div>
     <div class="countdown-item">
       <span class="countdown-time">{{ minutes }}</span>
-      <span class="countdown-label">minutes</span>
+      <span class="countdown-label">
+        {{ minutes <= 1 ? 'minute' : 'minutes' }}
+      </span>
     </div>
     <div class="countdown-item">
       <span class="countdown-time">{{ seconds }}</span>
-      <span class="countdown-label">secondes</span>
+      <span class="countdown-label">
+        {{ seconds <= 1 ? 'seconde' : 'secondes' }}
+      </span>
     </div>
   </div>
 </template>
@@ -56,12 +64,18 @@ onUnmounted(() => {
 
 //Conteneur du compteur
 .countdown {
+  max-width: 600px;
   width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 768px;
-  margin: 0 auto;
-  justify-content: center;
+}
+
+@media screen and (max-width: 767.98px){
+  .countdown {
+    width: 200px;
+  }
+
 }
 
 //Item du compteur
@@ -74,12 +88,14 @@ onUnmounted(() => {
 
 //Nombres
 .countdown-time {
+  font-size: 4rem;
   font-size: clamp(1rem, 5vw, 4rem);
   font-weight: 600;
 }
 
 //Etiquettes
 .countdown-label {
+  font-size: clamp(0.75rem, 2vw, 1rem);
   font-size: clamp(.65rem, 2vw, 25px);
   font-weight: 300;
   color: var(--text-color);
