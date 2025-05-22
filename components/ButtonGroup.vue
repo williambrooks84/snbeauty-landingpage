@@ -60,8 +60,8 @@ watch(isDark, (val) => {
 <style scoped lang="scss">
 .btn-group {
     position: fixed;
-    right: 4rem;
-    bottom: 2rem;
+    right: 5%;
+    bottom: 38px;
     z-index: 2000;
 }
 

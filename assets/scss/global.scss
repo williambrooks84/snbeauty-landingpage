@@ -48,12 +48,17 @@ body {
 
   // "Bientôt" decoration
   &::after {
-    background: url("/assets/img/bientot.svg") no-repeat center bottom;
+    background: url("/assets/img/bientot-light.svg") no-repeat center bottom;
     background-size: contain;
     left: 0;
     bottom: -10px;
     width: 100%;
     height: 150px;
+  }
+
+  // Dark mode "Bientôt" decoration
+  .dark &::after {
+    background-image: url("/assets/img/bientot-dark.svg");
   }
 
   // Products decoration

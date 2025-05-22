@@ -96,6 +96,11 @@ const toggleOverlay = () => {
     height: 2rem;
     transition: transform 0.3s ease;
   }
+
+&:focus {
+    outline: 2px solid var(--secondary-color, #fff);
+    outline-offset: 2px;
+}
 }
 
 .overlay {
