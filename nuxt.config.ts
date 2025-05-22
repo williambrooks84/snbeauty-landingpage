@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@/assets/scss/global.scss',
   ],
   plugins: ['~/plugins/montserrat.js'],
+  modules: ['@nuxt/ui'],
   vite: {
     css: {
       preprocessorOptions: {

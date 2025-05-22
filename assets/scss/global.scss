@@ -48,12 +48,22 @@ body {
 
   // "Bientôt" decoration
   &::after {
-    background: url("/assets/img/bientot.svg") no-repeat center bottom;
-    background-size: contain;
     left: 0;
     bottom: -10px;
     width: 100%;
     height: 150px;
+  }
+
+  // Default (light) theme
+  &::after {
+    background: url("/assets/img/bientot-light.svg") no-repeat center bottom;
+    background-size: contain;
+  }
+
+  // Dark theme override
+  .dark &::after {
+    background: url("/assets/img/bientot.svg") no-repeat center bottom;
+    background-size: contain;
   }
 
   // Products decoration

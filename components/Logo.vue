@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const theme = ref('light')
 
@@ -20,11 +20,16 @@ function updateTheme() {
     theme.value = htmlClass.contains('dark') ? 'dark' : 'light'
 }
 
+let observer
+
 onMounted(() => {
     updateTheme()
-    // Listen for class changes on <html>
-    const observer = new MutationObserver(updateTheme)
+    observer = new MutationObserver(updateTheme)
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+})
+
+onUnmounted(() => {
+    if (observer) observer.disconnect()
 })
 </script>
 

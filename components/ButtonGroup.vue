@@ -1,7 +1,7 @@
 <template>
     <div class="btn-group">
         <div class="btn-container">
-            <button type="button" class="btn" @click="toggleOverlay">
+            <button type="button" class="btn" @click="$emit('openMentions')">
                 <img src="/assets/svg/scale.svg" alt="Scale">
             </button>
             <button type="button" class="btn" @click="toggleTheme">
@@ -9,19 +9,14 @@
             </button>
         </div>
     </div>
-    <div class="overlay" :class="{ open: isOpen }">
-        <div class="mentions-content">
-            <Mentionslegales />
-        </div>
-    </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import Mentionslegales from '~/components/Mentionslegales.vue';
+import { ref, onMounted, watch } from 'vue';
+
+const emit = defineEmits(['openMentions']);
 
 const isDark = ref(false);
-const isOpen = ref(false);
 
 function toggleTheme() {
     isDark.value = !isDark.value;
@@ -32,10 +27,6 @@ function toggleTheme() {
         document.documentElement.classList.add('light');
         document.documentElement.classList.remove('dark');
     }
-}
-
-function toggleOverlay() {
-    isOpen.value = !isOpen.value;
 }
 
 onMounted(() => {
@@ -51,7 +42,6 @@ onMounted(() => {
     }
 });
 
-// Persist theme to localStorage when toggled
 watch(isDark, (val) => {
     localStorage.setItem('theme', val ? 'dark' : 'light');
 });
@@ -60,8 +50,8 @@ watch(isDark, (val) => {
 <style scoped lang="scss">
 .btn-group {
     position: fixed;
-    right: 4rem;
-    bottom: 2rem;
+    right: 5%;
+    bottom: 38px;
     z-index: 2000;
 }
 
@@ -75,31 +65,5 @@ img {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: var(--background);
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 0.5s ease-in-out;
-    pointer-events: none;
-
-    &.open {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    .mentions-content {
-        max-width: 75%;
-        margin: auto;
-        padding: 2rem;
-    }
 }
 </style>
