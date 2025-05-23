@@ -8,6 +8,8 @@
   --text-color: #{$text-color-light};
   --button-text: #{$text-color-dark};
   --background: #{$background-light};
+  --primary-darkened: #{$primary-darkened-light};
+  --overlay-color: #{$overlay-color};
 }
 
 .dark {
@@ -16,6 +18,7 @@
   --text-color: #{$text-color-dark};
   --button-text: #{$text-color-light};
   --background: #{$background-dark};
+  --primary-darkened: #{$primary-darkened-dark};
 }
 
 // =============================================
