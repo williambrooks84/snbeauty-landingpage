@@ -8,23 +8,28 @@
   --text-color: #{$text-color-light};
   --button-text: #{$text-color-dark};
   --background: #{$background-light};
-  --primary-darkened: #{$primary-darkened-light};
-  --overlay-color: #{$overlay-color};
+  --overlay-color: #{$text-color-light};
+  --overlay-btn: #{$overlay-btn-light};
+  --overlay-bg: #{$overlay-bg-light};
 }
 
-.dark {
+.dark-mode {
   // Dark theme overrides
   --primary-color: #{$primary-dark};
   --text-color: #{$text-color-dark};
   --button-text: #{$text-color-light};
   --background: #{$background-dark};
-  --primary-darkened: #{$primary-darkened-dark};
+  --overlay-color: #{$text-color-dark};
+  --overlay-btn: #{$overlay-btn-dark};
+  --overlay-bg: #{$overlay-bg-dark};
 }
 
 // =============================================
 // Base Elements
 // =============================================
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,7 +44,7 @@ body {
   color: var(--text-color);
   position: relative;
   min-height: 100vh; /* Ensure body takes at least viewport height */
-  
+
   // Background decoration elements
   &::before,
   &::after {
@@ -126,7 +131,7 @@ select {
   color: inherit;
   padding: 0;
   margin: 0;
-  
+
   &::placeholder {
     color: inherit;
     opacity: 0.6;

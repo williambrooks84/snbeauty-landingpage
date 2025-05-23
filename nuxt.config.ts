@@ -6,7 +6,17 @@ export default defineNuxtConfig({
     '@/assets/scss/global.scss',
   ],
   plugins: ['~/plugins/montserrat.js'],
-  modules: ['@nuxt/ui'],
+  modules: ['@nuxt/ui', '@nuxtjs/color-mode'],
+    colorMode: {
+    preference: 'system',
+    fallback: 'light', 
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '-mode',
+    storageKey: 'nuxt-color-mode'
+  },
   vite: {
     css: {
       preprocessorOptions: {
