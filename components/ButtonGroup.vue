@@ -1,69 +1,45 @@
 <template>
-    <div class="btn-group">
-        <div class="btn-container">
-            <button type="button" class="btn" @click="$emit('openMentions')">
-                <img src="/assets/svg/scale.svg" alt="Scale">
-            </button>
-            <button type="button" class="btn" @click="toggleTheme">
-                <img src="/assets/svg/sun.svg" alt="Sun">
-            </button>
-        </div>
+  <div class="btn-group">
+    <div class="btn-container">
+      <button type="button" class="btn" @click="$emit('openMentions')">
+        <img src="/assets/svg/scale.svg" alt="Scale">
+      </button>
+      <button type="button" class="btn" @click="toggleTheme">
+        <img src="/assets/svg/sun.svg" alt="Sun">
+      </button>
     </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { useColorMode } from '#imports';
 
 const emit = defineEmits(['openMentions']);
 
-const isDark = ref(false);
+const colorMode = useColorMode();
 
 function toggleTheme() {
-    isDark.value = !isDark.value;
-    if (isDark.value) {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-    } else {
-        document.documentElement.classList.add('light');
-        document.documentElement.classList.remove('dark');
-    }
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
 }
-
-onMounted(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        isDark.value = true;
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-    } else {
-        isDark.value = false;
-        document.documentElement.classList.add('light');
-        document.documentElement.classList.remove('dark');
-    }
-});
-
-watch(isDark, (val) => {
-    localStorage.setItem('theme', val ? 'dark' : 'light');
-});
 </script>
 
 <style scoped lang="scss">
 .btn-group {
-    position: fixed;
-    right: 5%;
-    bottom: 38px;
-    z-index: 2000;
+  position: fixed;
+  right: 5%;
+  bottom: 38px;
+  z-index: 2000;
 }
 
 .btn,
 img {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .btn-container {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 </style>

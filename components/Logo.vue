@@ -17,7 +17,7 @@ const logoSrc = computed(() =>
 
 function updateTheme() {
     const htmlClass = document.documentElement.classList
-    theme.value = htmlClass.contains('dark') ? 'dark' : 'light'
+    theme.value = htmlClass.contains('dark-mode') ? 'dark' : 'light'
 }
 
 let observer
