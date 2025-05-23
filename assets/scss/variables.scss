@@ -2,18 +2,19 @@
 $background-light: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #FFFFFF 70%, #FDFAF0 100%);
 $background-dark: radial-gradient(57% 57% at 50% 43%, #2D2D2C 0%, #30302A 50%, #171717 100%);
 
+//Bouton "à propos"
+$overlay-btn-light: #B11025;
+$overlay-btn-dark: #5D574B;
+$overlay-bg-light: #FDD7DC;
+$overlay-bg-dark: #2B2A28;
+
 //Couleurs primaires
 $primary-light: #B11025;
 $primary-dark: #EACD53;
 
-//Couleurs primaires assombries
-$primary-darkened-light: #5e0713;
-$primary-darkened-dark: #a5903c;
-
 //Texte
 $text-color-light: #191918;
 $text-color-dark: #FBFAF3;
-$overlay-color: #FBFAF3;
 
 //Couleurs neutres
 $white: #FFFFFF;
