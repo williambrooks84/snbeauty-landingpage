@@ -27,7 +27,7 @@
           <h2 class="title">Pensée pour celles et ceux qu’on oublie</h2>
           <p class="description">
             SN Beauty Cosmetics est une nouvelle gamme de soins bio conçue pour les peaux marquées,
-            métissées, oubliées trop souvent par l'industrie cosmétique.
+            métissées, trop souvent oubliées par l'industrie cosmétique.
           </p>
           <p class="description">
             Tâches pigmentaires, imperfections persistantes, teint irrégulier : notre formule douce et
@@ -41,7 +41,7 @@
             Le lancement approche. Envie d’en savoir plus ?
           </p>
 
-          <p class="info">Rejoignez la liste pour recevoir les infos en avant-première</p>
+          <p class="info">Rejoignez la liste pour recevoir les infos en avant-première.</p>
         </section>
       </div>
     </div>
@@ -151,6 +151,7 @@ const closeMenu = () => {
   &.open {
     clip-path: circle(150% at 50px 50px);
     pointer-events: auto;
+    scrollbar-width: none;
   }
 
   .about-content {
@@ -183,11 +184,16 @@ const closeMenu = () => {
     }
 
     .info {
-      font-size: 0.9rem;
+      font-size: 1.35rem;
+      font-weight: bold;
       margin-top: 0.5rem;
     }
   }
 }
+
+.light-mode .overlay .about-content .content {
+    color: rgb(248, 240, 240);
+  }
 
 .stroke {
   transform-origin: center center;

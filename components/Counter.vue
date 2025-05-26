@@ -62,6 +62,8 @@ onUnmounted(() => {
   max-width: 720px;
   margin: 0 auto;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 //Item du compteur
@@ -92,6 +94,18 @@ onUnmounted(() => {
   }
   .countdown-item {
     width: 80px;
+  }
+}
+
+@media screen and (max-width: 1366px) and (min-height: 600px) {
+  .countdown-item {
+    width: 80px;
+  }
+  .countdown-time {
+    font-size: 24px;
+  }
+  .countdown-label {
+    font-size: 10px;
   }
 }
 

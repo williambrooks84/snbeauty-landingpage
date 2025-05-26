@@ -3,8 +3,8 @@
         <Menu />
         <Logo />
         <div id="flex-reverse">
-            <Counter />
             <InputContainer @openMentions="openMentions" />
+            <Counter />
         </div>
         <ButtonGroup @openMentions="openMentions" />
         <transition name="slide-down">
@@ -60,7 +60,7 @@ function closeMentions() {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-    padding: 2rem 0 2rem 0;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +116,15 @@ function closeMentions() {
     opacity: 1;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 1366px) and (min-height: 600px) and (max-height: 768px) and (min-width: 768px) {
+    #flex-reverse {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
     #flex-reverse {
         flex-direction: column-reverse;
         justify-content: center;
